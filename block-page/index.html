@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Get back to work!</title>
+    <style>
+         body {
+          background: #20262E;
+          padding: 20px;
+          font-family: "Times New Roman", Times, serif;
+        }
+
+        #banner {
+          background: #fff;
+          color: #000;
+          border-radius: 8px;
+          padding: 20px;
+          font-size: 25px;
+          text-align: center;
+          transition: all 0.2s;
+          margin: 0 auto;
+        }
+
+        #explanation {
+          color: #fff;
+          position: absolute;
+          font-size: 10pt;
+          bottom: 10px;
+          text-align: center;
+        }
+
+        #quote {
+          font-style: italic;
+        }
+
+        a:link {
+          color: pink;
+        }
+
+        a:visited {
+          color: hotpink;
+        }
+
+        a:hover {
+          color: deeppink;
+        }
+
+        a:active {
+          color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <div id="banner">
+        <h1>Get back to work!</h1>
+        <p id="quote">
+            A boring inspirational quote.
+        </p>
+        <a id="link">...</a>
+    </div>
+    <div id="explanation">
+        This page is a landing page for the great WasteNoTime browser addon. I just do not like the idea of sharing my personal data using the default link <a href="https://www.bumblebeesystems.com/wastenotime/block.html">https://www.bumblebeesystems.com/wastenotime/block.html</a> with the company. Feel free to use it.
+    </div>
+    <script>
+        let searchParams = new URLSearchParams(window.location.search);
+        let link = searchParams.get('link');
+        if (link) {
+            $("#link").text(link);
+            $("#link").attr("href", link);
+        } else {
+            console.log("Link param was not present: " + searchParams);
+        }
+    </script>
+</body>
+
+</html>
