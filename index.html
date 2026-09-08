@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vojtech Letal</title>
+<meta name="description" content="Software engineer at Google DeepMind, Zurich. Post-training and adversarial robustness for Gemini.">
+<meta property="og:title" content="Vojtech Letal">
+<meta property="og:description" content="Software engineer at Google DeepMind, Zurich. Post-training and adversarial robustness for Gemini.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="skokan.png">
+<style>
+:root{
+  --bg:#0d0119; --bg2:#17032a; --panel:#1b0733;
+  --ink:#f2e8ff; --dim:#a690cc; --faint:#6f5a96;
+  --cyan:#3ef0ff; --mag:#f81ff0; --amber:#ffb03a; --edge:#3d1268;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  font:15px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  background-image:
+    radial-gradient(90% 55% at 50% -8%, #4a0d78 0%, transparent 62%),
+    linear-gradient(180deg,var(--bg2) 0%, var(--bg) 46%);
+  background-repeat:no-repeat;
+}
+.wrap{max-width:760px;margin:0 auto;padding:64px 22px 90px}
+
+/* ---- header: the sun, straight off the game's title screen ---- */
+header{position:relative;margin-bottom:54px}
+.sun{
+  position:absolute; top:-26px; right:2px; width:132px; height:132px; border-radius:50%;
+  background:linear-gradient(180deg,#ffe86a 0%,#ff9b3d 46%,#ff4a76 100%);
+  -webkit-mask-image:repeating-linear-gradient(180deg,#000 0 12px,transparent 12px 14px),linear-gradient(180deg,#000 60%,transparent 97%);
+  -webkit-mask-composite:source-in; mask-image:repeating-linear-gradient(180deg,#000 0 12px,transparent 12px 14px),linear-gradient(180deg,#000 60%,transparent 97%);
+  mask-composite:intersect; opacity:.9; pointer-events:none;
+}
+h1{
+  margin:0; font-size:clamp(30px,6.4vw,44px); letter-spacing:.05em; font-weight:800;
+  color:var(--cyan); text-shadow:3px 3px 0 var(--mag); position:relative;
+}
+.role{margin:10px 0 0;color:var(--dim);font-size:14px;letter-spacing:.03em;position:relative}
+.lede{margin:22px 0 0;max-width:60ch;color:var(--ink)}
+.lede b{color:var(--amber);font-weight:600}
+
+h2{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);
+  margin:52px 0 18px;font-weight:600;display:flex;align-items:center;gap:12px;
+}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--edge),transparent)}
+
+/* ---- work ---- */
+.job{display:grid;grid-template-columns:132px 1fr;gap:18px;padding:16px 0;border-top:1px solid #ffffff10}
+.job:first-of-type{border-top:0}
+.when{color:var(--faint);font-size:12.5px;padding-top:3px;white-space:nowrap}
+.what h3{margin:0 0 4px;font-size:15.5px;font-weight:700;color:var(--ink)}
+.what .org{color:var(--cyan);font-weight:600}
+.what p{margin:6px 0 0;color:var(--dim)}
+.what ul{margin:10px 0 0;padding-left:16px;color:var(--dim)}
+.what li{margin:4px 0}
+.what li::marker{color:var(--mag)}
+
+/* ---- project card ---- */
+.card{
+  display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;
+  background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:16px 18px;
+  transition:border-color .16s ease, transform .16s ease;
+}
+.card:hover{border-color:var(--mag);transform:translateY(-2px)}
+.card img{width:72px;height:72px;border-radius:14px;image-rendering:pixelated;flex:none}
+.card h3{margin:0;font-size:16px}
+.card p{margin:5px 0 0;color:var(--dim);font-size:13.5px}
+.card .go{margin-left:auto;color:var(--cyan);font-size:20px;flex:none}
+
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid #ffffff26}
+a:hover{border-bottom-color:var(--cyan)}
+.links{display:flex;gap:20px;flex-wrap:wrap;margin-top:6px}
+
+/* ---- the horizon, closing the page like the game closes its screen ---- */
+footer{margin-top:70px;padding-top:26px;border-top:2px solid var(--cyan);color:var(--faint);font-size:12.5px}
+.floor{margin-top:28px;height:150px;overflow:hidden;perspective:150px;perspective-origin:50% 0%}
+.floor i{
+  display:block;height:340px;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0 46px,#7b3fd4 46px 48px),
+    repeating-linear-gradient(0deg,transparent 0 34px,#7b3fd4 34px 36px);
+  transform:rotateX(74deg);transform-origin:50% 0%;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 62%);
+  mask-image:linear-gradient(180deg,#000 0%,transparent 62%);
+  opacity:.55;
+}
+@media (max-width:620px){
+  .job{grid-template-columns:1fr;gap:4px}
+  .when{padding-top:0}
+  .sun{width:96px;height:96px;top:-14px;opacity:.65}
+  .card{flex-wrap:wrap}
+  .card .go{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="sun" aria-hidden="true"></div>
+    <h1>Vojtech Letal</h1>
+    <p class="role">Software engineer · Google DeepMind · Zurich</p>
+    <p class="lede">
+      I work on <b>Gemini</b>'s post-training — the part after the model knows
+      how to talk, where it learns what to do and what not to fall for. Mostly
+      alignment and adversarial robustness: red-teaming it, breaking it, and
+      building the data and training that make the breaks stop working.
+    </p>
+  </header>
+
+  <h2>Work</h2>
+
+  <div class="job">
+    <div class="when">2024 — now</div>
+    <div class="what">
+      <h3>Software Engineer · <span class="org">Google DeepMind</span></h3>
+      <p>Core modelling and post-training for Gemini.</p>
+      <ul>
+        <li>Built training data that raised the cost of a prompt injection against Gemini roughly <b>10×</b>.</li>
+        <li>Shipped targeted response modification (SFT/RL) — ~90% user acceptance.</li>
+        <li>Productionised automated red-teaming that finds prompt-injection holes before anyone else does.</li>
+        <li>Adversarial image attacks against Gemini's vision stack.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2022 — 2024</div>
+    <div class="what">
+      <h3>Machine Learning Engineer · <span class="org">Google</span></h3>
+      <p>Bard. Making a large language model actually follow what a person meant, not just what they typed.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2021 — 2022</div>
+    <div class="what">
+      <h3>Staff ML Engineer / Scientist, AI · <span class="org">Avast</span></h3>
+      <p>Machine learning against people who are actively trying to defeat it. Prague.</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2015 — 2021</div>
+    <div class="what">
+      <h3>Senior ML Engineer · <span class="org">Blindspot Solutions</span></h3>
+      <p>Custom optimisation and game-theoretic systems for corporates and startups. Prague.</p>
+    </div>
+  </div>
+
+  <h2>Things</h2>
+
+  <a class="card" href="https://letalvoj.github.io/skokan/">
+    <img src="skokan.png" alt="">
+    <div>
+      <h3>SKOKAN</h3>
+      <p>A one-button platform runner for an ESP32 arcade box I built with my
+         8-year-old. The same C++ runs on the board, on macOS and in your
+         browser — click to play.</p>
+    </div>
+    <div class="go" aria-hidden="true">▶</div>
+  </a>
+
+  <h2>Elsewhere</h2>
+  <div class="links">
+    <a href="https://github.com/letalvoj">github.com/letalvoj</a>
+  </div>
+
+  <footer>
+    Prague → Zurich. Opinions my own, obviously.
+    <div class="floor" aria-hidden="true"><i></i></div>
+  </footer>
+
+</div>
+</body>
+</html>
