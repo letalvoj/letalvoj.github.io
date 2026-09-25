@@ -68,6 +68,7 @@ h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ed
   transition:border-color .16s ease, transform .16s ease;
 }
 .card:hover{border-color:var(--mag);transform:translateY(-2px)}
+.card + .card{margin-top:14px}
 .card img{width:72px;height:72px;border-radius:14px;image-rendering:pixelated;flex:none}
 .card h3{margin:0;font-size:16px}
 .card p{margin:5px 0 0;color:var(--dim);font-size:13.5px}
@@ -169,6 +170,17 @@ footer{margin-top:70px;padding-top:26px;border-top:2px solid var(--cyan);color:v
       <p>A one-button platform runner for an ESP32 arcade box I built with my
          8-year-old. The same C++ runs on the board, on macOS and in your
          browser — click to play.</p>
+    </div>
+    <div class="go" aria-hidden="true">▶</div>
+  </a>
+
+  <a class="card" href="https://letalvoj.github.io/obegraensad-bt-client/">
+    <img src="obegraensad.png" alt="">
+    <div>
+      <h3>OBEGRÄNSAD over Bluetooth</h3>
+      <p>New firmware for IKEA's 16×16 LED wall lamp: it runs without WiFi,
+         pairs with the browser over Bluetooth and takes firmware updates the
+         same way. Comes with a small procedural dude, trapped in his box.</p>
     </div>
     <div class="go" aria-hidden="true">▶</div>
   </a>
